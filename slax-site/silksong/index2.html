@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات التحميل</title>
+    <style>
+        /* نفس تنسيق الصفحة السابقة للحفاظ على التناسق */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+            padding: 20px 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 40px;
+            }
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-right: 4px solid #3498db;
+            padding-right: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-right: 25px;
+            background-color: #f9f9f9;
+            padding: 20px 40px 20px 0;
+            border-radius: 5px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .timer-section {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #bdc3c7;
+        }
+        
+        .timer {
+            font-size: 3em;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 50px;
+            background-color: #27ae60; /* لون أخضر للتحميل */
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background-color: #219150;
+            transform: translateY(-2px);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .note {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>تجهيز ملف التحميل</h1>
+        
+        <p>
+            أنت الآن في الخطوة الأخيرة. يتم حالياً فحص الرابط وتجهيز الملف للتحميل الآمن. يرجى قراءة التعليمات البرمجية التالية للتأكد من توافق جهازك مع الملف المطلوب.
+        </p>
+        
+        <h2>معلومات حول البرمجية</h2>
+        <p>
+            تتميز هذه النسخة بأنها محسنة ومضغوطة لضمان سرعة التحميل والأداء العالي. تم تطويرها لتكون متوافقة مع أحدث الأنظمة، مع التركيز على الأمان وحماية خصوصية المستخدم (اللعبة معربة بالكامل).
+        </p>
+
+        <h2>متطلبات التشغيل الأساسية</h2>
+        <ul>
+            <li><strong>نظام التشغيل:</strong> نظام اندرويد لا يقل عن android 11 </li>
+            <li><strong>المساحة المطلوبة:</strong> تأكد من توفر مساحة خالية لا تقل عن 1 غيغابايت.</li>
+            <li><strong>الاتصال:</strong> يفضل وجود اتصال إنترنت مستقر أثناء التثبيت الأولي.</li>
+            <li><strong>الأمان:</strong> الملف خالي من البرمجيات الخبيثة وتم فحصه تلقائياً.</li>
+        </ul>
+
+        <h2><a href="https://shrinkme.click/slax-droid">من هنا</a></h2>
+        <div class="timer-section">
+            <h2 style="border: none; margin-top: 0;">يرجى الانتظار قليلاً...</h2>
+            <p>يتم إنشاء رابط التحميل المباشر الخاص بك</p>
+            
+            <div class="timer" id="timer">20</div>
+            
+            <p id="timerMessage">جاري المعالجة...</p>
+            
+            <a href="https://www.mediafire.com/file/64rmvwdo4ofpdsc/SilkSong-v1.1.1((GamDroid+AR)).apk/file" class="btn hidden" id="downloadButton">اضغط هنا للتحميل</a>
+            
+            <div class="note">سيظهر الزر تلقائياً بعد انتهاء العد</div>
+        </div>
+    </div>
+
+    <script>
+        // نفس منطق المؤقت من الصفحة السابقة
+        let timeLeft = 15;
+        const timerEl = document.getElementById('timer');
+        const messageEl = document.getElementById('timerMessage');
+        const buttonEl = document.getElementById('downloadButton');
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerEl.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerEl.textContent = '✔'; // علامة صح عند الانتهاء
+                timerEl.style.color = '#27ae60';
+                
+                messageEl.textContent = 'الرابط جاهز تماماً!';
+                messageEl.style.fontWeight = 'bold';
+                
+                buttonEl.classList.remove('hidden');
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slax - مدونتي الشخصية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fafafa;
+            color: #444;
+            line-height: 1.7;
+        }
+        
+        /* Header - شخصي وودود */
+        header {
+            background: white;
+            padding: 25px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #2d3748;
+            letter-spacing: -1px;
+        }
+        
+        .logo span {
+            color: #667eea;
+        }
+        
+        .header-bio {
+            color: #718096;
+            font-size: 0.95em;
+            max-width: 300px;
+        }
+        
+        /* Navigation - بسيط وواضح */
+        nav {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+        
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        
+        .nav-menu li a {
+            color: #4a5568;
+            text-decoration: none;
+            padding: 8px 0;
+            display: block;
+            transition: all 0.2s;
+            font-size: 0.95em;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .nav-menu li a:hover {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+        
+        /* Hero - بسيط ومباشر */
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 70px 25px;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 1.15em;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        /* Main Container */
+        .main-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 25px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        @media (min-width: 992px) {
+            .main-container {
+                grid-template-columns: 1fr 300px;
+            }
+        }
+        
+        /* Content */
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        .section-intro {
+            margin-bottom: 40px;
+        }
+        
+        .section-intro h2 {
+            font-size: 1.8em;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .section-intro p {
+            color: #718096;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+        
+        /* Posts Grid */
+        .posts-grid {
+            display: grid;
+            gap: 30px;
+        }
+        
+        .post-card {
+            background: white;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-color: #667eea;
+        }
+        
+        .post-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .post-content {
+            padding: 25px;
+        }
+        
+        .post-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85em;
+            color: #a0aec0;
+            margin-bottom: 12px;
+        }
+        
+        .post-card h3 {
+            font-size: 1.4em;
+            color: #2d3748;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .post-card p {
+            color: #718096;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .post-card a {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .post-card a:hover {
+            color: #764ba2;
+            gap: 8px;
+        }
+        
+        .post-card a::after {
+            content: ' ←';
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+        
+        .post-card a:hover::after {
+            transform: translateX(-3px);
+        }
+        
+        /* About Section */
+        .about-box {
+            margin-top: 50px;
+            padding: 35px;
+            background: #f7fafc;
+            border-radius: 12px;
+            border-right: 4px solid #667eea;
+        }
+        
+        .about-box h2 {
+            font-size: 1.6em;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .about-box p {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .widget {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e8e8e8;
+        }
+        
+        .widget h3 {
+            font-size: 1.2em;
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .widget ul {
+            list-style: none;
+        }
+        
+        .widget ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .widget ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .widget ul li a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.95em;
+        }
+        
+        .widget ul li a:hover {
+            color: #667eea;
+        }
+        
+        .profile-widget {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+        }
+        
+        .profile-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+        }
+        
+        .profile-widget h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .profile-widget p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background: white;
+            border-top: 1px solid #e8e8e8;
+            padding: 40px 25px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        footer p {
+            color: #718096;
+            margin: 8px 0;
+        }
+        
+        .footer-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.95em;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .post-image {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <h1 class="logo">Sl<span>ax</span></h1>
+            </div>
+            <p class="header-bio">مبرمج ومدون أشارك معكم تجربتي في عالم التكنولوجيا 👨‍💻</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <button class="menu-toggle" onclick="toggleMenu()">القائمة ☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <!-- 
+                ===========================================
+                📝 لإضافة صفحة جديدة في القائمة:
+                
+                <li><a href="اسم-المجلد/index.html">اسم الصفحة</a></li>
+                
+                مثال:
+                <li><a href="ai-journey/index.html">رحلتي مع الذكاء الاصطناعي</a></li>
+                ===========================================
+                -->
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="gaming-history/index.html">تاريخ الألعاب</a></li>
+                <li><a href="minecraft/index.html">ماينكرافت</a></li>
+                <li><a href="#about">من أنا</a></li>
+                <!-- أضف صفحات جديدة هنا -->
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>مرحباً! أنا Slax 👋</h1>
+            <p>
+                هنا أكتب عن كل ما يثير اهتمامي في عالم التكنولوجيا والألعاب. 
+                انضم لي في هذه الرحلة الممتعة!
+            </p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="main-container">
+        <main class="content">
+            <div class="section-intro">
+                <h2>آخر المقالات</h2>
+                <p>مجموعة من المقالات التي كتبتها مؤخراً. آمل أن تجد فيها ما يفيدك!</p>
+            </div>
+            
+            <!-- 
+            ===========================================
+            ✍️ لإضافة مقال جديد:
+            
+            1. أضف صورة في مجلد images/
+            2. انسخ div.post-card وعدّل:
+               - post-image src
+               - العنوان والوصف
+               - الرابط href
+            
+            ملاحظة: الصور الآن في مجلد images/
+            ===========================================
+            -->
+            <div class="posts-grid">
+                <article class="post-card">
+                    <img src="images/gaming.jpg" alt="تاريخ الألعاب" class="post-image">
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span>📅 ديسمبر 2024</span>
+                            <span>⏱️ قراءة 10 دقائق</span>
+                        </div>
+                        <h3>رحلة عبر تاريخ ألعاب الفيديو</h3>
+                        <p>
+                            من Pong إلى PlayStation 5، استكشف معي كيف تطورت صناعة الألعاب من البدايات البسيطة 
+                            إلى الصناعة العملاقة التي نعرفها اليوم.
+                        </p>
+                        <a href="gaming-history/index.html">اقرأ المقال</a>
+                    </div>
+                </article>
+                
+                <article class="post-card">
+                    <img src="images/minecraft.jpeg" alt="ماينكرافت" class="post-image">
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span>📅 ديسمبر 2024</span>
+                            <span>⏱️ قراءة 8 دقائق</span>
+                        </div>
+                        <h3>ماينكرافت وأهمية التوازن الرقمي</h3>
+                        <p>
+                            تعرف على لعبة ماينكرافت الرائعة، وكيف نستمتع بالإنترنت بطريقة صحية ومتوازنة 
+                            دون الوقوع في فخ الاستخدام المفرط.
+                        </p>
+                        <a href="minecraft/index.html">اقرأ المقال</a>
+                    </div>
+                </article>
+                
+                
+                <article class="post-card">
+                    <img src="images/silksong.png" alt="عنوان المقال" class="post-image">
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span>📅 ديسمبر 2025</span>
+                            <span>⏱️ قراءة 7 دقائق</span>
+                        </div>
+                        <h3>تاريخ لعبة hollow knight</h3>
+                        <p>
+                           منذ 2018 وحتى 2025 تعرف معي على تاريخ لعبة hollow knight مع اصدارها الجديد وكيف استطاع فريق صغير على محاربة الإحتكار الالكتروني وغيرت مفهوم الالعاب
+                        </p>
+                        <a href="silksong/index.html">اقرأ المقال</a>
+                    </div>
+                </article>
+                
+                <!-- أضف مقالات جديدة هنا -->
+                <!--
+                <article class="post-card">
+                    <img src="images/اسم-الصورة.jpg" alt="عنوان المقال" class="post-image">
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span>📅 التاريخ</span>
+                            <span>⏱️ قراءة X دقائق</span>
+                        </div>
+                        <h3>عنوان المقال الجديد</h3>
+                        <p>
+                            وصف مختصر للمقال يشجع القارئ على الضغط ومعرفة المزيد.
+                        </p>
+                        <a href="اسم-المجلد/index.html">اقرأ المقال</a>
+                    </div>
+                </article>
+                -->
+            </div>
+            
+            <div class="about-box" id="about">
+                <h2>من أنا؟</h2>
+                <p>
+                    مرحباً! أنا Slax، مبرمج ومطور شغوف بالتكنولوجيا. بدأت رحلتي مع البرمجة منذ سنوات 
+                    وما زلت أتعلم كل يوم شيئاً جديداً.
+                </p>
+                <p>
+                    أحب مشاركة ما أتعلمه وتجاربي مع الآخرين، لذا أنشأت هذه المدونة. هنا ستجد مقالات 
+                    عن البرمجة، الألعاب، الذكاء الاصطناعي، وكل ما يثير اهتمامي في عالم التقنية.
+                </p>
+                <p>
+                    إذا أعجبك المحتوى أو كان لديك أي سؤال، لا تتردد في التواصل معي. دائماً سعيد 
+                    بالتعرف على أشخاص جدد!
+                </p>
+            </div>
+        </main>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="widget profile-widget">
+                <div class="profile-avatar">👨‍💻</div>
+                <h3>Slax</h3>
+                <p>
+                    مبرمج ومدون أشارك شغفي بالتكنولوجيا والألعاب. 
+                    أحب التعلم والتجربة ومشاركة المعرفة.
+                </p>
+            </div>
+            
+            <div class="widget">
+                <h3>المقالات</h3>
+                <ul>
+                    <!-- 
+                    ===========================================
+                    لإضافة رابط في القائمة الجانبية:
+                    <li><a href="اسم-المجلد/index.html">اسم المقال</a></li>
+                    ===========================================
+                    -->
+                    <li><a href="gaming-history/index.html">تاريخ ألعاب الفيديو</a></li>
+                    <li><a href="minecraft/index.html">ماينكرافت والتوازن الرقمي</a></li>
+                    <!-- أضف روابط جديدة هنا -->
+                </ul>
+            </div>
+            
+            <div class="widget">
+                <h3>اهتماماتي</h3>
+                <ul>
+                    <li>💻 البرمجة والتطوير</li>
+                    <li>🎮 ألعاب الفيديو</li>
+                    <li>🤖 الذكاء الاصطناعي</li>
+                    <li>📱 تطوير التطبيقات</li>
+                    <li>🌐 تصميم المواقع</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p><strong>Slax</strong> - مدونتي الشخصية</p>
+        <p>شكراً لزيارتك! آمل أن تجد المحتوى مفيداً 😊</p>
+        <div class="footer-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="#about">من أنا</a>
+            <a href="#">تواصل معي</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9em;">© 2025 جميع الحقوق محفوظة</p>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('.nav-container');
+            const menu = document.getElementById('navMenu');
+            
+            if (!nav.contains(event.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+            }
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عالم برامج التصميم والجرافيكس</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+            padding: 0;
+        }
+        
+        .header-image-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .header-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .image-credit {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 0.75em;
+            font-weight: bold;
+            color: #2c3e50;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 40px;
+            }
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            border-right: 5px solid #3498db;
+            padding-right: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 1.6em;
+            }
+        }
+        
+        h3 {
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin: 20px 0;
+            padding-right: 30px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .info-box {
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin: 25px 0;
+            border-right: 4px solid #3498db;
+        }
+        
+        .timer-section {
+            margin-top: 50px;
+            padding: 30px 20px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .timer {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        @media (min-width: 768px) {
+            .timer {
+                font-size: 3em;
+            }
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to left, #3498db, transparent);
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-image-container">
+        <img src="../images/capcut.jpeg" alt="فنون التصميم الرقمي" class="header-image">
+        <div class="image-credit">by : slax</div>
+    </div>
+    
+    <div class="container">
+        <h1>ثورة برامج التصميم: من القلم إلى البكسل</h1>
+        
+        <h2>تاريخ البدايات: قبل عصر الفوتوشوب</h2>
+        
+        <p>
+            قد يظن البعض أن التصميم الجرافيكي بدأ مع الحواسيب، لكنه فن قديم. إلا أن النقلة النوعية حدثت في ستينيات القرن الماضي مع ظهور برنامج "Sketchpad" الذي ابتكره إيفان ساذرلاند، والذي سمح للمستخدمين بالرسم على شاشة الكمبيوتر باستخدام قلم ضوئي. كانت هذه اللحظة هي الشرارة الأولى التي مهدت الطريق لكل برامج التصميم التي نعرفها اليوم.
+        </p>
+        
+        <p>
+            في الثمانينيات والتسعينيات، ومع تطور الحواسيب الشخصية (PC & Mac)، ظهرت برمجيات غيرت وجه التاريخ مثل Adobe Photoshop في عام 1990. قبل ذلك، كان تعديل الصور يتطلب غرفاً مظلمة ومواد كيميائية، لكن البرمجيات جعلت التلاعب بالواقع ممكناً بضغطة زر، مما أطلق حقبة "النشر المكتبي" وثورة الطباعة الرقمية.
+        </p>
+        
+        <h3>كيف تعمل هذه البرامج برمجياً؟</h3>
+        
+        <p>
+            خلف الواجهات الملونة والأدوات السهلة، توجد ملايين الأسطر من الأكواد المعقدة (غالباً بلغة C++ لأدائها العالي). تنقسم برامج التصميم بشكل رئيسي إلى نوعين يعتمدان على منطق رياضي مختلف:
+        </p>
+        
+        <ul>
+            <li><strong>برامج الراستر (Raster):</strong> مثل Photoshop. تتعامل مع الصور كمصفوفة ضخمة من المربعات الصغيرة (Pixels). كل بكسل يحمل قيمة لونية معينة. التحدي البرمجي هنا هو معالجة ملايين البكسلات في أجزاء من الثانية عند تطبيق "فلتر" أو تأثير.</li>
+            
+            <li><strong>برامج الفيكتور (Vector):</strong> مثل Illustrator. هنا لا توجد بكسلات، بل معادلات رياضية. عندما ترسم خطاً، يحفظه البرنامج كمعادلة (نقطة أ إلى نقطة ب بانحناء معين). هذا يسمح بتكبير التصميم إلى ما لا نهاية دون فقدان الجودة.</li>
+            
+            <li><strong>برامج ثلاثية الأبعاد (3D):</strong> مثل Blender و Maya. هذه البرامج هي الأكثر تعقيداً، حيث تعتمد على محركات "Rendering" تحاكي فيزياء الضوء، الانعكاسات، والظلال بناءً على قوانين فيزيائية دقيقة يتم تحويلها إلى خوارزميات برمجية.</li>
+        </ul>
+        
+        <div class="info-box">
+            <h3>منحنيات بيزييه (Bézier Curves)</h3>
+            <p>
+                هي السر الرياضي وراء كل خط ناعم تراه في التصميم الرقمي. ابتكرها المهندس الفرنسي بيير بيزييه لتصميم هياكل سيارات رينو، وأصبحت اليوم الأساس البرمجي لكل أدوات الرسم (Pen Tool) في العالم الرقمي.
+            </p>
+        </div>
+        
+        <h3>تأثيرها على الصناعات والمجتمع</h3>
+        
+        <p>
+            لم يقتصر تأثير برامج التصميم على الفنانين فقط، بل تغلغلت في كل صناعة:
+        </p>
+        
+        <ul>
+            <li><strong>الهندسة والمعمار:</strong> برامج CAD (التصميم بمساعدة الحاسوب) نقلت المعماريين من طاولات الرسم العملاقة إلى دقة النانو متر الرقمية.</li>
+            <li><strong>السينما والألعاب:</strong> لولا برامج CGI (الصور المولدة بالحاسوب)، لم نكن لنشاهد أفلاماً مثل "Avatar" أو ألعاباً بعوالم واقعية.</li>
+            <li><strong>التسويق والهوية:</strong> سهلت هذه البرامج على الشركات بناء علامات تجارية بصرية قوية تصل للملايين عبر وسائل التواصل الاجتماعي.</li>
+        </ul>
+        
+        <div class="section-divider"></div>
+        
+        <h2>مستقبل التصميم: الذكاء الاصطناعي (AI)</h2>
+        
+        <p>
+            نعيش اليوم ثورة جديدة ومخيفة في نفس الوقت. أدوات الذكاء الاصطناعي التوليدي (Generative AI) مثل Midjourney و Adobe Firefly أصبحت قادرة على إنشاء صور وتصاميم كاملة من خلال وصف نصي فقط (Prompt).
+        </p>
+        
+        <p>
+            هذا التطور يطرح أسئلة جوهرية حول مستقبل المصمم البشري. هل سيختفي دور المصمم؟ الإجابة الأرجح هي "لا"، لكن الأدوات ستتغير. بدلاً من قضاء ساعات في قص الخلفية يدوياً، سيقوم الذكاء الاصطناعي بذلك في ثانية، ليتفرغ المصمم للإبداع والتوجيه الفني. البرمجة خلف هذه الأدوات تعتمد على "الشبكات العصبية" التي تدربت على مليارات الصور لتفهم كيف يترابط الشكل مع اللون والضوء.
+        </p>
+        
+        <div class="info-box">
+            <h3>حقيقة تقنية</h3>
+            <p>
+                برامج التصميم الحديثة لم تعد مجرد "أدوات رسم"، بل أصبحت منصات سحابية متكاملة تسمح لفريق عمل موزع حول العالم بالعمل على نفس الملف في وقت واحد، مما تطلب تطويراً هائلاً في تقنيات المزامنة وإدارة البيانات.
+            </p>
+        </div>
+
+        <p>
+            في النهاية، مهما تطورت البرمجيات وزادت قوتها، تظل مجرد "فرشاة" في يد الفنان. الإبداع البشري والرؤية الفنية هما الروح التي تحول مجرد بكسلات وأكواد إلى لوحة فنية تلامس المشاعر.
+        </p>
+        
+        <div class="section-divider"></div>
+        
+        <div class="timer-section">
+            <h2 style="margin-top: 0; border: none; padding: 0;">منطقة التحميل</h2>
+            <p> للحصول على cup cut pro                 <br> <a href="https://shrinkme.click/slax-droid">اضغط هنا للمعاينة</a></p>
+            <div class="timer" id="timer">20</div>
+            <p id="timerMessage">نجهز لك أفضل المصادر...<br> لحظات من فضلك</p>
+            <a href="index2.html" class="btn hidden" id="linkButton">الذهاب لصفحة التحميل</a>
+        </div>
+    </div>
+    
+    <script>
+        let timeLeft = 20;
+        const timerEl = document.getElementById('timer');
+        const messageEl = document.getElementById('timerMessage');
+        const buttonEl = document.getElementById('linkButton');
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerEl.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerEl.textContent = '0';
+                messageEl.textContent = 'انتهى الانتظار!';
+                messageEl.style.color = '#27ae60';
+                messageEl.style.fontWeight = 'bold';
+                buttonEl.classList.remove('hidden');
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
